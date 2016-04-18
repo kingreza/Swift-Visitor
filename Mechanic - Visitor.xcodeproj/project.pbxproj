@@ -8,6 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		5796D0881CC46E2900286191 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796D0871CC46E2900286191 /* main.swift */; };
+		5796D08F1CC46F3100286191 /* documentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796D08E1CC46F3100286191 /* documentable.swift */; };
+		5796D0921CC46FE300286191 /* documenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796D0911CC46FE300286191 /* documenter.swift */; };
+		5796D0941CC4704B00286191 /* email_documenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796D0931CC4704B00286191 /* email_documenter.swift */; };
+		5796D09A1CC4710500286191 /* quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796D0991CC4710500286191 /* quote.swift */; };
+		5796D09C1CC4733A00286191 /* report_documenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796D09B1CC4733A00286191 /* report_documenter.swift */; };
+		5796D09E1CC4773D00286191 /* appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796D09D1CC4773D00286191 /* appointment.swift */; };
+		5796D0A01CC487BF00286191 /* car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796D09F1CC487BF00286191 /* car.swift */; };
+		5796D0A21CC4883200286191 /* mechanic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796D0A11CC4883200286191 /* mechanic.swift */; };
+		5796D0A41CC488A400286191 /* email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796D0A31CC488A400286191 /* email.swift */; };
+		5796D0A61CC4894B00286191 /* report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796D0A51CC4894B00286191 /* report.swift */; };
+		5796D0A81CC4895E00286191 /* report_type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796D0A71CC4895E00286191 /* report_type.swift */; };
+		5796D0AC1CC48AF700286191 /* customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796D0AB1CC48AF700286191 /* customer.swift */; };
+		5796D0AE1CC48DEB00286191 /* date_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796D0AD1CC48DEB00286191 /* date_extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +38,19 @@
 /* Begin PBXFileReference section */
 		5796D0841CC46E2900286191 /* Mechanic - Visitor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Mechanic - Visitor"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5796D0871CC46E2900286191 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		5796D08E1CC46F3100286191 /* documentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = documentable.swift; sourceTree = "<group>"; };
+		5796D0911CC46FE300286191 /* documenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = documenter.swift; sourceTree = "<group>"; };
+		5796D0931CC4704B00286191 /* email_documenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = email_documenter.swift; sourceTree = "<group>"; };
+		5796D0991CC4710500286191 /* quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = quote.swift; sourceTree = "<group>"; };
+		5796D09B1CC4733A00286191 /* report_documenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = report_documenter.swift; sourceTree = "<group>"; };
+		5796D09D1CC4773D00286191 /* appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = appointment.swift; sourceTree = "<group>"; };
+		5796D09F1CC487BF00286191 /* car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = car.swift; sourceTree = "<group>"; };
+		5796D0A11CC4883200286191 /* mechanic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mechanic.swift; sourceTree = "<group>"; };
+		5796D0A31CC488A400286191 /* email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = email.swift; sourceTree = "<group>"; };
+		5796D0A51CC4894B00286191 /* report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = report.swift; sourceTree = "<group>"; };
+		5796D0A71CC4895E00286191 /* report_type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = report_type.swift; sourceTree = "<group>"; };
+		5796D0AB1CC48AF700286191 /* customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customer.swift; sourceTree = "<group>"; };
+		5796D0AD1CC48DEB00286191 /* date_extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = date_extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +83,46 @@
 		5796D0861CC46E2900286191 /* Mechanic - Visitor */ = {
 			isa = PBXGroup;
 			children = (
+				5796D0AF1CC48DEE00286191 /* extentsions */,
+				5796D0AA1CC48A4A00286191 /* models */,
+				5796D0A91CC48A2400286191 /* documents */,
 				5796D0871CC46E2900286191 /* main.swift */,
+				5796D08E1CC46F3100286191 /* documentable.swift */,
+				5796D0911CC46FE300286191 /* documenter.swift */,
+				5796D0931CC4704B00286191 /* email_documenter.swift */,
+				5796D09B1CC4733A00286191 /* report_documenter.swift */,
 			);
 			path = "Mechanic - Visitor";
+			sourceTree = "<group>";
+		};
+		5796D0A91CC48A2400286191 /* documents */ = {
+			isa = PBXGroup;
+			children = (
+				5796D0A71CC4895E00286191 /* report_type.swift */,
+				5796D0A31CC488A400286191 /* email.swift */,
+				5796D0A51CC4894B00286191 /* report.swift */,
+			);
+			name = documents;
+			sourceTree = "<group>";
+		};
+		5796D0AA1CC48A4A00286191 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				5796D0991CC4710500286191 /* quote.swift */,
+				5796D09D1CC4773D00286191 /* appointment.swift */,
+				5796D09F1CC487BF00286191 /* car.swift */,
+				5796D0A11CC4883200286191 /* mechanic.swift */,
+				5796D0AB1CC48AF700286191 /* customer.swift */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		5796D0AF1CC48DEE00286191 /* extentsions */ = {
+			isa = PBXGroup;
+			children = (
+				5796D0AD1CC48DEB00286191 /* date_extensions.swift */,
+			);
+			name = extentsions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,6 +135,7 @@
 				5796D0801CC46E2900286191 /* Sources */,
 				5796D0811CC46E2900286191 /* Frameworks */,
 				5796D0821CC46E2900286191 /* CopyFiles */,
+				5796D0901CC46F4900286191 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -114,12 +178,41 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5796D0901CC46F4900286191 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5796D0801CC46E2900286191 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5796D0A41CC488A400286191 /* email.swift in Sources */,
+				5796D09E1CC4773D00286191 /* appointment.swift in Sources */,
+				5796D0921CC46FE300286191 /* documenter.swift in Sources */,
+				5796D0A01CC487BF00286191 /* car.swift in Sources */,
+				5796D09C1CC4733A00286191 /* report_documenter.swift in Sources */,
+				5796D08F1CC46F3100286191 /* documentable.swift in Sources */,
+				5796D09A1CC4710500286191 /* quote.swift in Sources */,
+				5796D0941CC4704B00286191 /* email_documenter.swift in Sources */,
+				5796D0A21CC4883200286191 /* mechanic.swift in Sources */,
+				5796D0A81CC4895E00286191 /* report_type.swift in Sources */,
+				5796D0AC1CC48AF700286191 /* customer.swift in Sources */,
+				5796D0AE1CC48DEB00286191 /* date_extensions.swift in Sources */,
 				5796D0881CC46E2900286191 /* main.swift in Sources */,
+				5796D0A61CC4894B00286191 /* report.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
