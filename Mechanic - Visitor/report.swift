@@ -21,7 +21,7 @@ struct Report {
     self.content = content
   }
 
-  func process() {
+  func output() {
     print("Report: \(self.title)")
     print("Content: \(self.content)")
     print("************************\n")

@@ -13,17 +13,17 @@ var joe = Mechanic(name: "Joe Stevenson")
 var mike = Mechanic (name: "Mike Dundee")
 
 var reza = Customer(name: "Reza Shirazian",
-                    email: "reza@yourmechanic.com",
+                    email: "reza@example.com",
                     zipcode: "94043",
                     address: "N Rengstorff ave")
 
 var lyanne = Customer(name: "Lyanne Borne",
-                      email: "jb_hhm@yahoo.com",
+                      email: "jb_hhm@example.com",
                       zipcode: "37110",
                       address: "E Main St McMinnvile TN")
 
 var sam = Customer(name: "Sam Lee",
-                   email: "lee.sam.3oo@gmail.com",
+                   email: "lee.sam.3oo@example.com",
                    zipcode: "95060",
                    address: "Pacific Ave, Santa Cruz")
 

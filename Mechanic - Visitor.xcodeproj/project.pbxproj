@@ -332,6 +332,7 @@
 				5796D08D1CC46E2900286191 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

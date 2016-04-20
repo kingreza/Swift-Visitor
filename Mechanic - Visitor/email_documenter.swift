@@ -18,7 +18,7 @@ class EmailDocumenter: Documenter {
                       subject: "Here is a quote for your \(documentable.car.make)",
                       body: content)
 
-    email.process()
+    email.output()
   }
 
   func process(documentable: Appointment) {
@@ -34,7 +34,7 @@ class EmailDocumenter: Documenter {
                       subject: "Your appointment is set for \(documentable.date.shortDateAndTime)",
                       body: content)
 
-     email.process()
+     email.output()
 
   }
 }

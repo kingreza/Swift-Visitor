@@ -21,7 +21,7 @@ struct Email {
     self.body = body
   }
 
-  func process() {
+  func output() {
     print("From: \(self.from)")
     print("To: \(self.to)")
     print("Subject: \(self.subject)")

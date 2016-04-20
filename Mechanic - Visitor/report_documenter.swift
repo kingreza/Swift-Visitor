@@ -19,7 +19,7 @@ class ReportDocumenter: Documenter {
                         title: "Quote Generation Report for \(documentable.customer.name)",
                         content: content)
 
-    report.process()
+    report.output()
   }
   func process(documentable: Appointment) {
     var content = "Appointment for \(documentable.customer.name) was generated\n"
@@ -32,7 +32,7 @@ class ReportDocumenter: Documenter {
                         title: "Appointment Generation Report for \(documentable.customer.name)",
                         content: content)
 
-    report.process()
+    report.output()
 
   }
 }

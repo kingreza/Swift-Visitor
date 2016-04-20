@@ -10,5 +10,4 @@ import Foundation
 
 protocol Documentable {
   func accept (documenter: Documenter)
-
 }
