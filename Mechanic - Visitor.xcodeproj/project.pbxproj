@@ -21,6 +21,7 @@
 		5796D0A81CC4895E00286191 /* report_type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796D0A71CC4895E00286191 /* report_type.swift */; };
 		5796D0AC1CC48AF700286191 /* customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796D0AB1CC48AF700286191 /* customer.swift */; };
 		5796D0AE1CC48DEB00286191 /* date_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796D0AD1CC48DEB00286191 /* date_extensions.swift */; };
+		5796D0DC1CC7758F00286191 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5796D0DB1CC7758F00286191 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +52,7 @@
 		5796D0A71CC4895E00286191 /* report_type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = report_type.swift; sourceTree = "<group>"; };
 		5796D0AB1CC48AF700286191 /* customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customer.swift; sourceTree = "<group>"; };
 		5796D0AD1CC48DEB00286191 /* date_extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = date_extensions.swift; sourceTree = "<group>"; };
+		5796D0DB1CC7758F00286191 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		5796D07B1CC46E2900286191 = {
 			isa = PBXGroup;
 			children = (
+				5796D0DB1CC7758F00286191 /* README.md */,
 				5796D0861CC46E2900286191 /* Mechanic - Visitor */,
 				5796D0851CC46E2900286191 /* Products */,
 			);
@@ -211,6 +214,7 @@
 				5796D0A81CC4895E00286191 /* report_type.swift in Sources */,
 				5796D0AC1CC48AF700286191 /* customer.swift in Sources */,
 				5796D0AE1CC48DEB00286191 /* date_extensions.swift in Sources */,
+				5796D0DC1CC7758F00286191 /* README.md in Sources */,
 				5796D0881CC46E2900286191 /* main.swift in Sources */,
 				5796D0A61CC4894B00286191 /* report.swift in Sources */,
 			);
