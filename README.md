@@ -145,7 +145,7 @@ struct Email {
     self.body = body
   }
 
-  func process() {
+  func output() {
     print("From: \(self.from)")
     print("To: \(self.to)")
     print("Subject: \(self.subject)")
@@ -165,7 +165,7 @@ struct Report {
     self.content = content
   }
 
-  func process() {
+  func output() {
     print("Report: \(self.title)")
     print("Content: \(self.content)")
     print("************************\n")
