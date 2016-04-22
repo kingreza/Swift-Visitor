@@ -2,11 +2,11 @@
 This repository is part of a series. For the full list check out <a href="https://shirazian.wordpress.com/2016/04/11/design-patterns-in-swift/">Design Patterns in Swift</a>
 
 <h3>The problem:</h3>
-When a quote is requested or an appointment is booked we send out an email to the customer, and build an internal report for the quote and the appointment. The content of the email and report are dependant on the customer's address, their car make model, price and the mechanic selected for the service. We need a system that can provide us with an easy and straightforward way of composing these documents. Ideally we hope to achieve this without adding the report/email functionality to our already cluttered Quote and Appointment class.
+Our customers at <a href="http://www.yourmechanic.com">YourMechanic</a> can request quotes through our website or through their YourMechanic App. We send out an email and create an internal report when such quotes are requested. After the customer views the quote and decides to book it, that quote becomes an appointment. We send out an email and create an internal report when that happens as well. The content of the email and the report are dynamically generated from the information contained in the quote and the appointment.  We need a system that can provide us with an easy and straightforward way of composing these documents. Ideally we hope to achieve this without adding repeated report/email functionality to our already cluttered Quote and Appointment class.
 
 <h3>The solution:</h3>
 
-We define our quote and appointment class to accept a visitor. We then define visitors for emails and reports that once accepted into their respective classes, generate the documents without us having to code anything directly within our Quote or Appointment class. The visitor design pattern is a little counter intuitive to understand so we are going to approach this step by step, with as much details as possible.
+We define our quote and appointment class to accept visitor object. We then define these objects for emails and reports. When these objects are accepted into their respective visiting classes, they can generate the documents needed without having to be part of that class. The Visitor design pattern has always been a little counter intuitive to understand so we are going to approach this step by step, with as much details as possible.
 
 <!--more-->
 
@@ -76,7 +76,7 @@ protocol Documenter {
 }
 ````
 
-We define two protocols. In this example I've called them Documentable and Documenter. Another way they could have been named is Visitable and Visitor. The class that will implement the Documentable protocol will accept a Documenter visitor. This means the documentable class can delegate the task of generating whatever needed documents, be it an email or report to its visitor class the Documentor. The class that implements the Documenter, processes the Documentable objects. In our example we have two Documentable objects Quote and Appointment. They are not implemented yet, but we'll get to them in a second.
+We define two protocols. In this example I've called them Documentable and Documenter. Another way they could have been named is Visitable and Visitor. The class that will implement the Documentable protocol will accept a Documenter visitor. This means the documentable class can delegate the task of generating the needed documents, be it an email or report to its visitor class the Documentor. The class that implements the Documenter, processes the Documentable objects. In our example we have two Documentable objects Quote and Appointment and two Documenter classes ReportDocumenter and EmailDocumenter.
 
 The way we are planning to generate our emails and reports is to have two classes that implement the Documenter protocol: one for emails and another for reports. These Documenter class will have the functionality needed to generate the email and report without being part of the Quote and Appointment classes. By using visitor we can extend the functionalities of our two visitable classes through external visiting objects.
 
@@ -101,9 +101,9 @@ class Quote: Documentable {
 }
 ````
 
-The Quote class implements the Documentable protocol, which requires it to have an 'accept' method, taking a Documenter as parameter. This function in turn calls the process method on the Documentor, passing itself. When that is called, any subsequent code that is executed is what's defined in the visitor class's process function. And since we are passingo ourselves to the process method of the Visitor class, the Visitor will have access to us outside the visitable class code base.
+The Quote class implements the Documentable protocol, which requires it to have an 'accept' method, taking a Documenter as parameter. This function in turn calls the process method on the Documentor, passing itself. When that is called, any subsequent code that is executed will be part of the visitor class's process function. And since the Documentable class is passing itself to the process method of the Visitor class, the Visitor will have access to it outside the Documentable class code base.
 
-You as the programmer can now add functionalities and new behaviours without having to add anything to the visitable class. Let's come back to this idea once we have everything in place.
+Using this pattern you can now add functionalities and new behaviours without having to add anything to the visitable class. Let's come back to this idea once we have everything in place.
 
 ````swift
 class Appointment: Documentable {
@@ -127,7 +127,7 @@ class Appointment: Documentable {
 
 ````
 
-We do the same thing with our Appointment class, having it implement Documentable. Just like the Quote class our Appointment class calls the process method in its Documenter (visitor) object when a Documenter is accepted by it.
+We do the same thing with our Appointment class. It implements Documentable and like the Quote class, it calls the process method in its Documenter (visitor) object when a Documenter is accepted by it.
 
 Before building our Documenter classes let's build our Email and Report classes. These are the object that our Documenter (visitor) classes will be constructing.
 
@@ -178,7 +178,7 @@ enum ReportType: Int {
 
 ````
 
-There is nothing substantially interesting about these classes. The Email struct holds properties (to, from, subject, etc) that you expect to see in an Email object. The Report struct contains similar objects intended to simulate some arbitrary custom model in our internal system. I have added a simple output function for both of these classes that prints their content to the console.
+There is nothing substantially interesting about these classes. The Email struct holds properties (to, from, subject, etc) that you expect to see in an Email object. The Report struct contains similar objects intended to simulate some arbitrary custom report in our internal system. I have added a simple output function for both of these classes that prints their content to the console.
 
 Now let's see how our Documenters (visitor) classes build these objects.
 
@@ -215,13 +215,13 @@ class EmailDocumenter: Documenter {
 }
 ````
 
-Let's start with our EmailDocumenter which is the visitor responsible for building our emails. This class implements the Documenter protocol which forces it to implement two process methods, one accepting a Quote and another accepting an Appointment. In the process method for Quote, we take the data within the Quote that's passed to construct the Email. The content of the email is what we send to a customer that has requested a quote with along with any relevant data.
+Let's start with our EmailDocumenter which is the visitor responsible for building our emails. This class implements the Documenter protocol which forces it to implement two process methods, one accepting a Quote and another accepting an Appointment. In the process method for Quote, we take the Quote and use its content to construct an Email. This email ends up being what we send to the customer to inform them about their quote.
 
-The second process function takes an Appointment as a parameter. And naturally builds an Email related to the appointment booked by a customer. We call the output function on both emails to see their content to console.
+The second process function takes an Appointment as a parameter. And naturally builds an Email related to the appointment booked by the customer. To double check and make sure our emails are being constructed correctly we call the output function after they are generated. This will print out their content to the console. 
 
-This class is responsible for building our emails for both Quote and Appointments. As you can see none of this code is in our Quote or Appointment classes. The functionality to generate emails has been separated out of those objects and housed in once central place.
+This class is responsible for building our emails for both Quote and Appointments. As you can see none of this code is in our Quote or Appointment classes. The functionality to generate emails has been separated out of those objects and housed in one central place.
 
-This is ofcourse possible because our Quote and Appointment classes accept Documentors (visitors). Using this we can keep extending new functionalities without mucking around the classes themselves. So let's keep going. We still have a report to build as well.
+This is ofcourse possible because our Quote and Appointment classes accept Documentors (visitors). Using this we can keep extending new functionalities without mucking around the classes themselves. So let's keep going. We still have a report to build.
 
 ````swift
 class ReportDocumenter: Documenter {
@@ -254,9 +254,9 @@ class ReportDocumenter: Documenter {
 }
 ````
 
-Our ReportDocumenter class (another visitor), much like our EmailDocumenter class implements the Documenter protocol. And like EmailDocumenter, it has two process methods, one taking a Quote and another taking an Appointment class. The code within the process methods simply takes the objects passed and uses its properties to build the needed report.
+Our ReportDocumenter class (another visitor), much like our EmailDocumenter class implements the Documenter protocol. And like EmailDocumenter, it has two process methods, one taking a Quote and another taking an Appointment. The code within the process methods simply takes the objects passed and uses its properties to build the needed report.
 
-Another benefit of using the Visitor design pattern is the fact that you can group similar functionalities together. In our example, the email generation for both Quote and Appointment is in one place and the report generation is in another. Since these two processes are not really related to the Quote or the Appointment themselves, this makes sense.
+Another benefit of using the Visitor pattern is the fact that you can group similar functionalities together. In our example, the email generation for both Quote and Appointment is in one place and the report generation is in another. Since these two processes are not really related to the Quote or the Appointment or each other, this makes sense.
 
 Now that we have everything in place lets see them in action.
 
@@ -333,7 +333,7 @@ When our Documenter is accepted by a Quote or an Appointment the process method 
 
 With this setup, our main execution results in the following output:
 
-````swift
+````
 From: hi@yourmechanic.com
 To: reza@example.com
 Subject: Here is a quote for your Ford
