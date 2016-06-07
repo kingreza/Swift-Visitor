@@ -1,6 +1,8 @@
 <h1>Design Patterns in Swift: Visitor</h1>
 This repository is part of a series. For the full list check out <a href="https://shirazian.wordpress.com/2016/04/11/design-patterns-in-swift/">Design Patterns in Swift</a>
 
+For a cheat-sheet of design patterns implemented in Swift check out <a href="https://github.com/ochococo/Design-Patterns-In-Swift"> Design Patterns implemented in Swift: A cheat-sheet</a>
+
 <h3>The problem:</h3>
 Our customers at <a href="http://www.yourmechanic.com">YourMechanic</a> can request quotes through our website or through their YourMechanic App. We send out an email and create an internal report when such quotes are requested. After the customer views the quote and decides to book it, that quote becomes an appointment. We send out an email and create an internal report when that happens as well. The content of the email and the report are dynamically generated from the information contained in the quote and the appointment.  We need a system that can provide us with an easy and straightforward way of composing these documents. Ideally we hope to achieve this without adding repeated report/email functionality to our already cluttered Quote and Appointment class.
 
